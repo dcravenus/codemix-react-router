@@ -25,7 +25,7 @@ const Pokemon = ({ name }) => {
   if (pokemonData) {
     return (
       <div css={styles}>
-        <img src={pokemonData.sprites["front_default"]} />
+        <img src={pokemonData.sprites["front_default"]} alt={pokemonData.name} />
         <p>{pokemonData.name[0].toUpperCase() + pokemonData.name.slice(1)}</p>
       </div>
     );

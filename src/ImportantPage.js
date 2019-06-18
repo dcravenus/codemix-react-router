@@ -2,7 +2,7 @@ import React from "react";
 import { Prompt } from "react-router-dom";
 import ImportantVideo from "./ImportantVideo";
 
-const ImportantRoute = () => {
+const ImportantPage = () => {
   return (
     <div>
       <ImportantVideo />
@@ -16,4 +16,4 @@ const ImportantRoute = () => {
   );
 };
 
-export default ImportantRoute;
+export default ImportantPage;

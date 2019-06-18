@@ -1,49 +1,16 @@
+import React from "react";
+import "./App.css";
 import { BrowserRouter as Router, Route, NavLink, Switch } from "react-router-dom";
-/** @jsx jsx */
-import { css, jsx } from "@emotion/core";
 
 import Cat from "./Cat";
-import Pokemon from "./Pokemon";
-import SelectPokemonPage from "./SelectPokemonPage";
-import ImportantRoute from "./ImportantRoute";
+import PokemonPage from "./PokemonPage";
+import ImportantPage from "./ImportantPage";
 import ColorPage from "./ColorPage";
 
-const headerStyles = css`
-  background: lightgray;
-  padding: 10px;
-  margin-bottom: 10px;
-
-  a {
-    color: black !important;
-    font-size: 20px;
-    padding: 0 10px;
-    text-decoration: none;
-  }
-  a.active {
-    font-weight: bold;
-  }
-`;
-
 const AppRouter = () => {
-  const PokemonPage = ({ match }) => {
-    return (
-      <div>
-        <Switch>
-          <Route
-            path={`${match.path}/:name`}
-            render={({ match }) => {
-              return <Pokemon name={match.params.name} />;
-            }}
-          />
-          <Route component={SelectPokemonPage} />
-        </Switch>
-      </div>
-    );
-  };
-
   return (
     <Router>
-      <header id="foo" css={headerStyles}>
+      <header>
         <NavLink to="/" exact>
           Home
         </NavLink>
@@ -62,8 +29,7 @@ const AppRouter = () => {
         <Route path="/" exact render={() => {}} />
         <Route path="/cat" component={Cat} />
         <Route path="/pokemon" component={PokemonPage} />
-        <Route path="/important" component={ImportantRoute} />
-
+        <Route path="/important" component={ImportantPage} />
         <Route path="/color" component={ColorPage} />
       </Switch>
     </Router>
